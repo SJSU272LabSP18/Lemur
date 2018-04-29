@@ -51,6 +51,19 @@
 	  </div>
 	</div>
 
+	<div id="login-modal" class="w3-modal"  style="display:none;margin-top:100px">
+		<div class='w3-modal-content w3-animate-zoom w3-text-white w3-black w3-display-topright w3-opacity-min' style="width:35%">
+			<span onclick="document.getElementById('login-modal').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+			<span class='w3-xlarge w3-hide-small'>Sign In</span>
+			<br>
+			<form action='.'>
+				<p><input class='w3-input w3-border' type='text' placeholder='Email' required name='Email'></p>
+				<p><input class='w3-input w3-border' type='password' placeholder='Password' required name='Password'></p>
+				<p><button class='w3-button w3-black' type='submit'><i class='fa fa-sign-in'></i> SIGN IN</button></p>
+			</form>
+		</div>
+	</div>
+
 	<!-- Sidebar on small screens when clicking the menu icon -->
 	<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
 	  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
@@ -248,10 +261,7 @@
 
 	//signin modal
 	function showLoginPrompt(){
-		var navBar = document.getElementById("myNavbar");
-		var signin_prompt = document.createElement("div");
-		signin_prompt.innerHTML = "<div class='w3-display-right w3-text-white w3-third w3-black w3-opacity-min' style='margin-top:180px;padding:48px'><span class='w3-xlarge w3-hide-small w3-black w3-opacity-min'>Sign In</span><br><form action='.'><p><input class='w3-input w3-border' type='text' placeholder='Email' required name='Email'></p><p><input class='w3-input w3-border' type='password' placeholder='Password' required name='Password'></p><p><button class='w3-button w3-black' type='submit'><i class='fa fa-sign-in'></i> SIGN IN</button></p></form></div>";
-		navBar.appendChild(signin_prompt);
+		document.getElementById("login-modal").style.display="block";
 	}
 
 	// Toggle between showing and hiding the sidebar when clicking the menu icon
