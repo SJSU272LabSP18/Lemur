@@ -39,7 +39,7 @@
 	    <div class="w3-right w3-hide-small">
 				<a href="#home" class="w3-bar-item w3-button">HOME</a>
 	      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-	      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+	      <a href="#team" class="w3-bar-item w3-button">TEAM</a>
 	      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
 				<a onclick="showLoginPrompt()" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> SIGN IN</a>
 	    </div>
@@ -52,17 +52,37 @@
 	</div>
 
 	<div id="login-modal" class="w3-modal"  style="display:none;margin-top:100px">
-		<div class='w3-modal-content w3-animate-zoom w3-text-white w3-black w3-display-topright w3-opacity-min' style="width:35%">
+		<div class='w3-modal-content w3-animate-zoom w3-text-white w3-black w3-display-topright w3-opacity-min' style="width:35%;padding:48px">
 			<span onclick="document.getElementById('login-modal').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
 			<span class='w3-xlarge w3-hide-small'>Sign In</span>
 			<br>
 			<form action='.'>
 				<p><input class='w3-input w3-border' type='text' placeholder='Email' required name='Email'></p>
 				<p><input class='w3-input w3-border' type='password' placeholder='Password' required name='Password'></p>
-				<p><button class='w3-button w3-black' type='submit'><i class='fa fa-sign-in'></i> SIGN IN</button></p>
+				<p><button class='w3-button w3-blue' type='submit'><i class='fa fa-sign-in'></i> SIGN IN</button>
+				<button class='w3-button w3-green' onclick="document.getElementById('login-modal').style.display='none'; document.getElementById('registration-modal').style.display='block';"><i class='fa fa-user'></i> REGISTER</button></p>
 			</form>
 		</div>
 	</div>
+
+	<div id="registration-modal" class="w3-modal"  style="display:none;margin-top:100px">
+		<div class='w3-modal-content w3-text-white w3-black w3-display-topright w3-opacity-min' style="width:50%;padding:48px">
+			<span onclick="document.getElementById('registration-modal').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+			<span class='w3-xlarge w3-hide-small'>REGISTER</span>
+			<br>
+			<form action='/users' method="post">
+				<p><input class='w3-input w3-border' type='text' placeholder='First Name' required name='first_name'><input class='w3-input w3-border' type='text' placeholder='Last Name' required name='last_name'></p>
+				<p><input class='w3-input w3-border' type='text' placeholder='Email' required name='email'></p>
+				<p><input class='w3-input w3-border' type='text' placeholder='Phone' required name='phone_number'></p>
+				<p><input class='w3-input w3-border' type='text' placeholder='City' required name='city'><input class='w3-input w3-border' type='text' placeholder='State' required name='state'></p>
+				<p><input class='w3-input w3-border' type='text' placeholder='Country' required name='country'><input class='w3-input w3-border' type='text' placeholder='Zip Code' required name='zipcode'></p>
+				<p><input class='w3-input w3-border' type='text' placeholder='Address' required name='address'></p>
+				<p><input class='w3-input w3-border' type='password' placeholder='Password' required name='password'></p>
+				<p><button class='w3-button w3-green' type='submit'><i class='fa fa-user'></i> REGISTER</button>
+			</form>
+		</div>
+	</div>
+
 
 	<!-- Sidebar on small screens when clicking the menu icon -->
 	<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">

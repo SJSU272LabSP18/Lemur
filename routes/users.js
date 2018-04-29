@@ -5,7 +5,7 @@ var bcrypt = require('bcryptjs');
 var passport = require('passport');
 var LocalStrategy =  require('passport-local').Strategy;
 const saltRounds = 10;
- 
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -27,11 +27,11 @@ router.post('/',function(req,res,next){
     // Store hash in your password DB.
     con.query('INSERT INTO users (first_name,last_name,email,phone_number,city,state,country,zipcode,address,password) VALUES(?,?,?,?,?,?,?,?,?,?)',[first_name,last_name,email,phone_number,city,state,country,zipcode,address,hash],function(err, result,fields) {
       if(err) throw err;
-      res.render('index',{title:'Registration Complete!'});
     });
+  res.send('Registration Complete!');
   });
 
-  
+
 });
 
 passport.use('local', new LocalStrategy({
@@ -46,21 +46,21 @@ function(req, email, pwd, done) {
     console.log(user);
     bcrypt.compare(pwd, user['password'], function(err, isMatch){
       if(err) throw err;
-      if(isMatch) { 
+      if(isMatch) {
         done(null,user);
       }
       else {
         done(null,false);
       }
-      
+
     });
 
   });
-  
+
 
 
 }));
- 
+
 passport.serializeUser(function(user, done){
   console.log(user);
   done(null, user.id);
@@ -91,7 +91,7 @@ router.post('/login',function(req,res,next){
       res.send(response);
     }
   })(req,res,next);
-   
+
 
 });
 module.exports = router;

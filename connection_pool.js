@@ -4,8 +4,8 @@ function connectionPool() {
     var pool = mysql.createPool({
         connectionLimit: 100, //important
         host: "localhost",
-        user: "lemurapp",
-        password: "lemurapp",
+        user: "root",
+        password: "aprajita212",
         database: "fms"
     });
     pool.getConnection(function(err, connection) {
