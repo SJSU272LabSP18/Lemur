@@ -10,6 +10,7 @@ var passport = require('passport');
 
 
 var indexRouter = require('./routes/index');
+var cheezy = require('./routes/cheezy');
 var usersRouter = require('./routes/users');
 var leads = require('./routes/leads');
 var tasksRouter = require('./routes/tasks');
@@ -42,6 +43,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/leads', leads);
 app.use('/tasks', tasksRouter);
+app.use('/cheezy', cheezy);
 
 
 
