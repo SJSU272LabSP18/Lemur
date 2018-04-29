@@ -41,7 +41,7 @@
 	      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
 	      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
 	      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-				<a href="/signup" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> SIGN IN</a>
+				<a onclick="showLoginPrompt()" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i> SIGN IN</a>
 	    </div>
 	    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -246,6 +246,13 @@
 	  captionText.innerHTML = element.alt;
 	}
 
+	//signin modal
+	function showLoginPrompt(){
+		var navBar = document.getElementById("myNavbar");
+		var signin_prompt = document.createElement("div");
+		signin_prompt.innerHTML = "<div class='w3-display-right w3-text-white w3-third w3-black w3-opacity-min' style='margin-top:180px;padding:48px'><span class='w3-xlarge w3-hide-small w3-black w3-opacity-min'>Sign In</span><br><form action='.'><p><input class='w3-input w3-border' type='text' placeholder='Email' required name='Email'></p><p><input class='w3-input w3-border' type='password' placeholder='Password' required name='Password'></p><p><button class='w3-button w3-black' type='submit'><i class='fa fa-sign-in'></i> SIGN IN</button></p></form></div>";
+		navBar.appendChild(signin_prompt);
+	}
 
 	// Toggle between showing and hiding the sidebar when clicking the menu icon
 	var mySidebar = document.getElementById("mySidebar");

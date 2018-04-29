@@ -13,7 +13,6 @@ var indexRouter = require('./routes/index');
 var cheezy = require('./routes/cheezy');
 var usersRouter = require('./routes/users');
 var leads = require('./routes/leads');
-var signup = require('./routes/signup');
 var tasksRouter = require('./routes/tasks');
 var add_doc = require('./routes/add-document');
 
@@ -45,7 +44,6 @@ app.use('/users', usersRouter);
 app.use('/leads', leads);
 app.use('/tasks', tasksRouter);
 app.use('/cheezy', cheezy);
-app.use('/signup', signup);
 
 
 
