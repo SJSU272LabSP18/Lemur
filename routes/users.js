@@ -28,7 +28,7 @@ router.post('/',function(req,res,next){
     con.query('INSERT INTO users (first_name,last_name,email,phone_number,city,state,country,zipcode,address,password) VALUES(?,?,?,?,?,?,?,?,?,?)',[first_name,last_name,email,phone_number,city,state,country,zipcode,address,hash],function(err, result,fields) {
       if(err) throw err;
     });
-  res.send('Registration Complete!');
+  res.render('registrationLanding', {first_name: first_name, last_name: last_name});
   });
 
 
