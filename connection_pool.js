@@ -3,9 +3,9 @@ let mysql = require('mysql');
 function connectionPool() {
     var pool = mysql.createPool({
         connectionLimit: 100, //important
-        host: "localhost",
+        host: "fms.cbvajauho28z.us-east-1.rds.amazonaws.com",
         user: "root",
-        password: "aprajita212",
+        password: "password",
         database: "fms"
     });
     pool.getConnection(function(err, connection) {
@@ -14,6 +14,7 @@ function connectionPool() {
             console.log("Cannot connect to database");
             return;
         }
+        console.log("My Sql Connected....")
     });
     return pool;
 
