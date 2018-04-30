@@ -83,7 +83,7 @@ router.post('/login',function(req,res,next){
       response.success = true;
       response.statusCode = 200;
       response.message = user;
-      con.query("SELECT * FROM leads WHERE user_id=1" , function(err,leads){ //@aprajita: Need to update to user variable
+      con.query("SELECT * FROM leads WHERE user_id=" + user[0].id , function(err,leads){
         if(err) throw err;
         res.render('leadsList',{title:"Home",user:user, leads:leads});
       });
