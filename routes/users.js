@@ -41,10 +41,10 @@ passport.use('local', new LocalStrategy({
 },
 function(req, email, pwd, done) {
   console.log("I am in passport.use");
-  con.query('SELECT * FROM users WHERE email='+email+';',function(err,user){
+  con.query("SELECT * FROM users WHERE email='"+email+"' LIMIT 1;",function(err,user){
     if(err) throw err;
     console.log(user);
-    bcrypt.compare(pwd, user['password'], function(err, isMatch){
+    bcrypt.compare(pwd, user[0].password, function(err, isMatch){
       if(err) throw err;
       if(isMatch) {
         done(null,user);
@@ -83,7 +83,11 @@ router.post('/login',function(req,res,next){
       response.success = true;
       response.statusCode = 200;
       response.message = user;
-      res.send(response);
+      con.query("SELECT * FROM leads WHERE user_id=1" , function(err,leads){ //@aprajita: Need to update to user variable
+        if(err) throw err;
+        res.render('leadsList',{title:"Home",user:user, leads:leads});
+      });
+      //res.render('leadsList', {user: user});
     } else {
       response.success = false;
       response.statusCode = 401;
