@@ -21,11 +21,12 @@ router.post('/',function(req,res,next){
   let country = req.body.country;
   let zipcode = req.body.zipcode;
   let address = req.body.address;
+  let user_type = req.body.user_type;
   let password = req.body.password;
 
   bcrypt.hash(password, saltRounds, function(err, hash) {
     // Store hash in your password DB.
-    con.query('INSERT INTO users (first_name,last_name,email,phone_number,city,state,country,zipcode,address,password) VALUES(?,?,?,?,?,?,?,?,?,?)',[first_name,last_name,email,phone_number,city,state,country,zipcode,address,hash],function(err, result,fields) {
+    con.query('INSERT INTO users (first_name,last_name,email,phone_number,city,state,country,zipcode,address,password,user_type) VALUES(?,?,?,?,?,?,?,?,?,?,?)',[first_name,last_name,email,phone_number,city,state,country,zipcode,address,hash,user_type],function(err, result,fields) {
       if(err) throw err;
     });
   res.render('registrationLanding', {first_name: first_name, last_name: last_name});
