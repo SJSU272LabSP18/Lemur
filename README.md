@@ -3,6 +3,27 @@ Project Team #1
 
 Team Members: Aishwarya Saxena, Aprajita, Tong Wu,Zenobia Adnan Panvelwala.
 
+# Demo
+**Address:** 
+
+http://ec2-18-232-122-63.compute-1.amazonaws.com:3000/
+
+**Log in with:**
+
+Franchisor
+```
+Email: zenobiapanvelwalla@gmail.com
+
+Password: 123
+```
+
+Franchisee
+```
+Email: debbie@cason.com
+
+Password: abc
+```
+
 # Abstract
 After marketing a franchise system successfully, a good franchisor will provide meaningful support and guidance to the new franchise partners on a consistent basis. The value of a franchise model should add up to much more than just the collection of a franchise fee. There should be substantial value 6 months, 2 years and even 10 years into the franchise relationship. Like any marketing or sales model, it is much more efficient and profitable for a franchisor to retain happy, profitable franchisees than to continue going out and looking for new ones.
 
